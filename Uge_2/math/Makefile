@@ -8,11 +8,11 @@ out.txt : main.exe
 main.exe : main.cs cmath.dll
 	mcs $(CSFLAGS) -out:main.exe -reference:cmath.dll main.cs
 
-LIBDIR = ~/Documents/Uni/Praktisk_Programmering/lib/complex
+LIBDIR = ../../lib/complex
 cmath.dll: $(LIBDIR)/cmath.cs $(LIBDIR)/complex.cs
 	mcs $(CSFLAGS) -target:library -out:cmath.dll $^
 
 
 #.PHONEY:clean
 clean:
-	rm -f out.txt main.exe
+	rm -f out.txt main.exe cmath.dll

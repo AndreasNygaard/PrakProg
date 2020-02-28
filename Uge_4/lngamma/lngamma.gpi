@@ -1,0 +1,13 @@
+set encoding utf8
+set title "lnGamma-function: computed vs. tabulated"
+set term svg
+set out "lnGamma.svg"
+set xlabel "x"
+set ylabel "y"
+set xzeroaxis
+set yzeroaxis
+set tics out
+set key bottom right
+plot [-5:10] \
+ "out.lngamma.txt" with lines title "Î“(x)" \
+,"table.lngamma.txt" with points pt 6 title "tabulated"
