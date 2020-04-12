@@ -2,7 +2,7 @@ using static interp;
 using static System.Math;
 static class main{
 static void Main(){
-	int N=50;
+	int N=17;
 	double x_min=-4;
 	double x_max=4;
 	double Dx=(x_max-x_min)/(N-1);
@@ -12,7 +12,10 @@ static void Main(){
 	x_tab[i]=x_min+i*Dx;
 	y_tab[i]=Cos(x_tab[i]);
 	}
-	double integral = interp.lintegral(x_tab,y_tab,3.5);
-	System.Console.WriteLine("integral = {0}",integral);
+	double z=3.1415;
+	double integral = interp.cintegral(x_tab,y_tab,z);
+	System.Console.WriteLine("integral from {0} to {1}= {2}",x_min,z,integral);
+	double diff = interp.cdiff(x_tab,y_tab,z);
+	System.Console.WriteLine("diff at x={0} = {1}",z,diff);
 }
 }

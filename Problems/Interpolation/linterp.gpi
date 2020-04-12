@@ -1,5 +1,5 @@
 set encoding utf8
-set title "Linear Interpolation"
+set title "Cubic Interpolation"
 set term svg
 set out "Linterp.svg"
 set xlabel "x"

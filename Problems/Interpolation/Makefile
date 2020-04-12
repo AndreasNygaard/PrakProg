@@ -1,13 +1,13 @@
-all: Linterp.svg
+all: Linterp.svg integrals.exe
 
-Linterp.svg: linterp.gpi output.txt
+Linterp.svg: linterp.gpi output.txt table.txt
 	gnuplot $<
 
 integrals.exe: integrals.cs math.dll
 	mcs -r:math.dll $<
 
-output.txt: main.exe
-	mono $< > $@ 2> table.txt
+output.txt table.txt &: main.exe
+	mono $< > output.txt 2> table.txt
 
 main.exe: main.cs math.dll
 	mcs -r:math.dll $<
@@ -25,7 +25,7 @@ math.dll: $(LIBDIR)/vector.cs interp.cs
 linterp.gpi: Makefile table.txt
 	cat /dev/null > $@
 	echo 'set encoding utf8' >> $@
-	echo 'set title "Linear Interpolation"' >> $@
+	echo 'set title "Cubic Interpolation"' >> $@
 	echo 'set term svg' >> $@
 	echo 'set out "Linterp.svg"' >> $@
 	echo 'set xlabel "x"' >> $@

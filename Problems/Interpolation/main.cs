@@ -2,7 +2,7 @@ using static interp;
 using static System.Math;
 static class main{
 static void Main(){
-	int N=15;
+	int N=17;
 	double x_min=-4;
 	double x_max=4;
 	double Dx=(x_max-x_min)/(N-1);
@@ -15,6 +15,6 @@ static void Main(){
 	}
         double dx=1.0/32;
 	for(double x=x_min;x<=x_max;x+=dx)
-	System.Console.WriteLine("{0} {1}",x,interp.qinterp(x_tab,y_tab,x));
+	System.Console.WriteLine("{0} {1}",x,interp.cinterp(x_tab,y_tab,x));
 }
 }
