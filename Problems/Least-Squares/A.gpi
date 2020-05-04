@@ -1,0 +1,1 @@
+set term svg font "Arial,20";set out "A.gpi";set title "Rutherford and Soddy experiment";set xlabel "Time in Days";set ylabel "Percent Activity";a=100;b=0.2;c=1;f(x)=a*exp(-b*x)+c;fit f(x) "Makefile" u 1:2:3 yerrors via a,b,c;plot "Makefile" with errorbars title "experimental data","Makefile" index 1 with lines title "exponential fit",f(x) with lines title "gnuplot fit"

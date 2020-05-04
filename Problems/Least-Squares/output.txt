@@ -1,0 +1,45 @@
+____Assignment A____
+Time t:         1          2          3          4          6          9         10         13         15 
+Activity y:       117        100         88         72         53       29.5       25.2       15.2       11.1 
+Errors dy:      5.85          5        4.4        3.6       2.65       1.48       1.26       0.76      0.555 
+
+Fitted exponential function:
+y(t)=142.4·exp(-0.171·t)
+
+A plot of this fit is seen in A.svg
+
+
+The half-life of ThX is found to be 4.04451793348687 days
+
+
+
+____Assignment B____
+Covariance matrix:
+   0.00089   8.75e-05 
+  8.75e-05   1.25e-05 
+
+Fitted exponential function with errors on coefficients:
+y(t)=[142.4 ± 4.249]·exp(-[0.171 ± 0.0035]·t)
+
+
+Errors on fit-coefficients in y(t)=a·exp(-k·t):
+
+a = (142.404080608249 ± 4.24898502806152) % activity
+k = (0.171379430616683 ± 0.00353553390593274) days^(-1)
+
+Half-life of ThX with uncertainty is (4.045 ± 0.08344) days
+
+The modern value of the half-life is 3.66 days, and this is not within our uncertainty
+
+
+
+____Assignment C____
+We plot four additional fits, each corrected with an uncertainty of a coefficient
+
+These fits are as follows:
+y(t)=[142.4 + 4.249]·exp(-0.171·t)
+y(t)=[142.4 - 4.249]·exp(-0.171·t)
+y(t)=142.4·exp(-[0.171 + 0.0035]·t)
+y(t)=142.4·exp(-[0.171 - 0.0035]·t)
+
+A plot of these fits are seen in C.svg
