@@ -1,0 +1,171 @@
+______ Assignment A ______
+
+Testing integrals with adaptive integrator:
+
+∫[0,1]dx √(x) = 0.666666671080574
+Exact result: 0.666666666666667 
+acc: 1E-07 
+eps: 1E-05 
+tol: 6.76666671080574E-06 
+err: 4.4139077948202E-09 
+calls: 312
+err<tol: test passed
+Error estimate: 9.57026798062124E-07
+
+∫[0,1]dx 4√(1-x^2) = 3.14159266072042
+Exact result: 3.14159265358979 
+acc: 1E-07 
+eps: 1E-05 
+tol: 3.15159266072043E-05 
+err: 7.13063164070604E-09 
+calls: 448
+err<tol: test passed
+Error estimate: 3.04646120920262E-06
+
+
+
+______ Assignment B ______
+
+Testing integrals with divergencies with Clenshaw-Curtis transformation:
+
+WITHOUT Clenshaw-Curtis transformation
+∫[0,1]dx 1/√(x) = 1.99999101365726
+Exact result: 2 
+acc: 0.0001 
+eps: 0.0001 
+tol: 0.000299999101365726 
+err: 8.98634273838184E-06 
+calls: 1180
+err<tol: test passed
+Error estimate: 0.000104111197892466
+
+WITH Clenshaw-Curtis transformation
+∫[0,1]dx 1/√(x) = 1.99999950243225
+Exact result: 2 
+acc: 0.0001 
+eps: 0.0001 
+tol: 0.000299999950243225 
+err: 4.97567753887651E-07 
+calls: 32
+err<tol: test passed
+Error estimate: 0.000123635857193292
+
+
+
+WITHOUT Clenshaw-Curtis transformation
+∫[0,1]dx ln(x)/√(x) = -3.99999691278792
+Exact result: -4 
+acc: 0.0001 
+eps: 0.0001 
+tol: 0.000499999691278792 
+err: 3.08721208330809E-06 
+calls: 2336
+err<tol: test passed
+Error estimate: 7.04384264783199E-05
+
+WITH Clenshaw-Curtis transformation
+∫[0,1]dx ln(x)/√(x) = -3.99999507124846
+Exact result: -4 
+acc: 0.0001 
+eps: 0.0001 
+tol: 0.000499999507124846 
+err: 4.92875153801364E-06 
+calls: 216
+err<tol: test passed
+Error estimate: 8.86921869003E-05
+
+
+
+Calculating ∫[0,1]dx 4√(1-x^2) with and without Clenshaw-Curtis 
+as well as with the o8av routine
+
+WITHOUT Clenshaw-Curtis transformation
+∫[0,1]dx ln(x)/√(x) = 3.14159265402167
+Exact result: 3.14159265358979 
+acc: 1E-07 
+eps: 1E-07 
+tol: 4.14159265402167E-07 
+err: 4.31876756579186E-10 
+calls: 1172
+err<tol: test passed
+Error estimate: 7.93347759883325E-08
+
+WITH Clenshaw-Curtis transformation
+∫[0,1]dx ln(x)/√(x) = 3.14159265358885
+Exact result: 3.14159265358979 
+acc: 1E-07 
+eps: 1E-07 
+tol: 4.14159265358885E-07 
+err: 9.40580946462433E-13 
+calls: 1740
+err<tol: test passed
+Error estimate: 5.50420851313675E-08
+
+Using o8av
+∫[0,1]dx ln(x)/√(x) = 3.14159265304791
+Exact result: 3.14159265358979 
+acc: 1E-07 
+eps: 1E-07 
+tol: 4.14159265304791E-07 
+err: 5.41881650661935E-10 
+calls: 40
+err<tol: test passed
+
+We see that given the same accuracies, the Clenshaw-Curtis is the closest to the exact
+result, but it also has the most calls by far. The o8av routine has almost 2 orders of 
+magnitude less calls and performs almost as well, while the adaptive routine without 
+Clenshaw-Curtis has around 2/3 of the calls of Clenshaw-Curtis and has around the same 
+accuracy as the o8av routine.
+
+
+______ Assignment C ______
+
+Testing my integrator with infinite limits
+
+Calculating ∫[0,∞]dx exp(-x) with my own integrator and with the o8av routine
+
+My own adaptive integrator
+∫[0,∞]dx exp(-x) = 1.00000487956181
+Exact result: 1 
+acc: 0.0001 
+eps: 0.0001 
+tol: 0.000200000487956181 
+err: 4.8795618114994E-06 
+calls: 76
+err<tol: test passed
+Error estimate: 6.46624927609078E-05
+
+Using o8av
+∫[0,∞]dx exp(-x) = 1.00018982464843
+Exact result: 1 
+acc: 0.0001 
+eps: 0.0001 
+tol: 0.000200018982464843 
+err: 0.00018982464843087 
+calls: 24
+err<tol: test passed
+
+
+Calculating ∫[-∞,∞]dx exp(-(x-3)^2) with my own integrator and with the o8av routine
+
+My own adaptive integrator
+∫[-∞,∞]dx exp(-(x-3)^2) = 1.76990391458249
+Exact result: 1.77245385090552 
+acc: 0.001 
+eps: 0.001 
+tol: 0.00276990391458249 
+err: 0.00254993632302636 
+calls: 72
+err<tol: test passed
+Error estimate: 0.000646597247111716
+
+Using o8av
+∫[-∞,∞]dx exp(-(x-3)^2) = 1.77178378124111
+Exact result: 1.77245385090552 
+acc: 0.001 
+eps: 0.001 
+tol: 0.00277178378124111 
+err: 0.000670069664402861 
+calls: 48
+err<tol: test passed
+

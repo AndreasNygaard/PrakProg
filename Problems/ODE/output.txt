@@ -1,0 +1,19 @@
+_____ Assignment A _____
+The solution of u''=-u with u(0)=0 can be seen in the figure Sin.svg
+It shows the single-derivative Cosine as well.
+
+
+
+_____ Assignment B _____
+We choose the parameters 
+N=5800000, Tc=4, Tr=10 
+for the Covid-19 epidemic in Denmark. 
+The results are seen in the figure SIR.svg
+
+The figures Tc_2.svg and Tc_6.svg shows the same 
+calculation, but for different times between contact.
+
+As we can see from the figures, the 'Infectious' 
+curve flattens as we increase Tc, because the virus 
+is not spread as easily. We also end up with fewer 
+removed at the end, and thus fewer infected overall.
