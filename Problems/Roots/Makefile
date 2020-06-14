@@ -23,7 +23,7 @@ Energy_improve.svg: data.txt Makefile
 	set title "Obtained energy as function of r_{max} with better boundary condition";\
 	set xlabel "r_{max} [a_{Bohr}]";\
 	set ylabel "E [Hatree]";\
-	plot [0:6][]\
+	plot [0:6][-0.50001:-0.49998]\
 	 "$<" index 9 with points pt 2 notitle \
 	,-0.5 with lines lt 0 lw 4 dt 7 title "exact"\
 	'| gnuplot
