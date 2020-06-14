@@ -132,7 +132,7 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(361.8,46.5)" stroke="none" fill="black" font-family="Arial" font-size="18.00"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Hydrogen s-wave shooting to F</tspan><tspan font-family="Arial"  font-size="14.4" dy="5.40px">E</tspan><tspan font-family="Arial"  font-size="18.0" dy="-5.40px">(r</tspan><tspan font-family="Arial"  font-size="14.4" dy="5.40px">max</tspan><tspan font-family="Arial"  font-size="18.0" dy="-5.40px">)=0 with better boundary condition</tspan></text>
+		<text><tspan font-family="Arial" >Hydrogen s-wave shooting to F</tspan><tspan font-family="Arial"  font-size="14.4" dy="5.40px">E</tspan><tspan font-family="Arial"  font-size="18.0" dy="-5.40px">(r</tspan><tspan font-family="Arial"  font-size="14.4" dy="5.40px">max</tspan><tspan font-family="Arial"  font-size="18.0" dy="-5.40px">)=0 - better boundary condition</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">

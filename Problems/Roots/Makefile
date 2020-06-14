@@ -20,7 +20,7 @@ Energy_improve.svg: data.txt Makefile
 	set out "$@";\
 	set key right;\
 	set tics out;\
-	set title "Obtained energy as function of r_{max} with better boundary condition";\
+	set title "Obtained energy as function of r_{max} - better boundary condition";\
 	set xlabel "r_{max} [a_{Bohr}]";\
 	set ylabel "E [Hatree]";\
 	plot [0:6][-0.50001:-0.49998]\
@@ -52,7 +52,7 @@ S-wave_improve.svg: data.txt Makefile
 	set out "$@";\
 	set key right;\
 	set tics out;\
-	set title "Hydrogen s-wave shooting to F_E(r_{max})=0 with better boundary condition";\
+	set title "Hydrogen s-wave shooting to F_E(r_{max})=0 - better boundary condition";\
 	set xlabel "r [a_{Bohr}]";\
 	set ylabel "F_E(r)";\
 	f(x) = x*exp(-x);\
