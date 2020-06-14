@@ -1,0 +1,74 @@
+______ Assignment A ______
+
+Testing rootfinding with simple functions:
+
+root of f(x)=2x-1 with starting point x0=1:       0.5 
+root of f(x)=5x^2-7x+1 with starting point x0=1:      1.24 
+root of f(x)=5x^2-7x+1 with starting point x0=0:     0.161 
+
+All of these fit the analytical results.
+
+
+Finding extremums of the 'Rosenbrock's valley function (RVF)':
+
+We must look for roots of the gradient
+root of gradient of RVF with starting point (x0,y0)=(0,0):         1          1 
+f(root)=  8.99e-08  -5.06e-08 
+eps            = 0.0001
+f(root).norm() = 1.03214798240736E-07
+test passed
+
+
+
+______ Assignment B ______
+
+Solutions with different r_max:
+
+
+rmax = 2 Bohr radii
+root of M(e)=0:    -0.125 
+
+rmax = 3 Bohr radii
+root of M(e)=0:    -0.424 
+
+rmax = 5 Bohr radii
+root of M(e)=0:    -0.496 
+
+rmax = 10 Bohr radii
+root of M(e)=0:      -0.5 
+
+The figures Energy.svg and S-wave.svg shows the energy and s-wave 
+function for the different r_max along with the exact solutions.
+We see that we must have a rather high (~10) r_max to 
+get the correct solution
+
+
+
+______ Assignment C ______
+
+We can see the convergence of the solution as a function of r_max 
+in the plots Energy.svg and S-wave.svg. These have been made 
+using the simple boundary condition.
+
+Solutions with different r_max and better boundary condition:
+
+
+rmax = 1 Bohr radii
+root of M(e)=0:      -0.5 
+
+rmax = 2 Bohr radii
+root of M(e)=0:      -0.5 
+
+rmax = 3 Bohr radii
+root of M(e)=0:      -0.5 
+
+rmax = 5 Bohr radii
+root of M(e)=0:      -0.5 
+
+In the figures Energy_improve.svg and S-wave_improve.svg, 
+we see the results with a better boundary condition. 
+We can see that we do not need as high an r_max as before, since we 
+track the exact solution for any r_max until r_max is reached.
+
+
+
