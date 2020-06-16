@@ -46,20 +46,6 @@ public static void randomx(vector x, vector a, vector b, Random RND, bool print_
 
 public static double trial_fraction=0.1;
 
-/*
-public static void randomx_strat(vector x, double[] a, double[] b, Random RND, bool print_points){
-	for(int i=0;i<x.size;i++) x[i]=a[i]+RND.NextDouble()*(b[i]-a[i]);
-	if(print_points){
-StreamWriter pointWriter = new StreamWriter("strat_points.txt", true);
-for(int i=0; i<x.size; i++){
-pointWriter.Write($"{x[i]} ");
-}
-pointWriter.Write("\n");
-pointWriter.Close();
-}
-	}
-*/
-
 public static double[] stratmc(Func<vector,double> f, double[] a, double[] b, int npoints, bool print_points, Random RND=null){
 	if(RND==null)RND=new Random(1);
 	int dim=a.Length;
