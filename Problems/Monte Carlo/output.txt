@@ -1,0 +1,69 @@
+______ Assignment A ______
+
+Testing Monte Carlo integrator:
+
+Second-degree polynomial, ∫[0,8]dx 4*x^2 - 6*x + 8:
+
+Number of points N = 1000
+The integral is estimated to 538.104960450399
+Exact integral is 554.666666666667
+The estimated error is 15.3414250137844
+The exact error is 16.5617062162678
+
+Number of points N = 100000
+The integral is estimated to 548.643991515098
+Exact integral is 554.666666666667
+The estimated error is 1.5896579349716
+The exact error is 6.02267515156848
+
+
+Himmelblau's function, ∫[0,6]dx ∫[0,6]dy (x^2+y-11)^2 + (x+y^2-7)^2:
+
+Number of points N = 100000
+The integral is estimated to 11446.1922117056
+Exact integral is 11390.4
+The estimated error is 40.6716286983267
+The exact error is 55.7922117056114
+
+We see that we get a better result using more points, and the 
+result converges towards the exact result.
+
+
+Difficult singular integral, ∫[0,π]dx ∫[0,π]dy ∫[0,π]dz 1/[(1-cos(x)*cos(y)*cos(z)) * π^3]:
+
+Number of points N = 500000
+The integral is estimated to 1.3899139333371
+Exact integral is 1.39320392968568
+The estimated error is 0.00930565323480177
+The exact error is 0.00328999634857574
+
+
+
+
+______ Assignment B ______
+
+We will use the Himmelblau's function to test the error as a function of N.
+
+The result is seen in the figure Error.svg. We clearly see that the estimated
+error drops as 1/√N, and the actual error does as well to some extend.
+
+
+
+______ Assignment C ______
+
+We estimate the integral of the difficult singular function using recursive 
+stratified sampling
+
+Number of points N = 500000
+The integral is estimated to 1.39302931697472
+Exact integral is 1.39320392968568
+The estimated error is 0.00303299269660099
+The exact error is 0.000174612710954758
+
+
+We estimate the area of circle with radius 0.9 by integrating 
+over a constant circular function.
+
+The area is estimated to 2.83317132045784
+
+The stratified points can be seen in the figure Strat.svg

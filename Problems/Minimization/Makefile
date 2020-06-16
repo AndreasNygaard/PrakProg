@@ -25,5 +25,5 @@ math.dll: $(LIBDIR)/vector.cs $(LIBDIR)/matrix.cs minimize.cs
 	mcs -t:library -out:$@ $^
 
 clean:
-	rm -f *.exe *.dll *.txt
+	rm -f *.exe *.dll *.txt *.svg
 

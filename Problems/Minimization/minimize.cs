@@ -1,9 +1,6 @@
 using System;
 using static System.Math;
 using static System.Double;
-using System.Diagnostics;
-using System.Collections.Generic;
-using static System.Console;
 
 public static class minimize{
 
