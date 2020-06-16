@@ -1,10 +1,11 @@
 all: Error.svg Strat.svg output.txt
 
 Error.svg: data.txt Makefile
+	rm -f fit.log
 	echo '\
 	set term svg enhanced size 640,480 background "white" font "Arial,18";\
 	set out "$@";\
-	set key right;\
+	set key right bottom;\
 	set tics out;\
 	set log x;\
 	set log y;\
@@ -33,6 +34,7 @@ Strat.svg: strat_points.txt Makefile
 	'|gnuplot
 
 output.txt data.txt strat_points.txt: main.exe
+	rm -f strat_points.txt
 	mono $< > output.txt 2>data.txt
 
 main.exe: main.cs math.dll
@@ -43,5 +45,5 @@ math.dll: $(LIBDIR)/vector.cs $(LIBDIR)/matrix.cs mc.cs
 	mcs -t:library -out:$@ $^
 
 clean:
-	rm -f *.exe *.dll *.txt
+	rm -f *.exe *.dll *.txt *.log *.svg
 

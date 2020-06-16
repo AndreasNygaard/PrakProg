@@ -5,25 +5,25 @@ Testing Monte Carlo integrator:
 Second-degree polynomial, ∫[0,8]dx 4*x^2 - 6*x + 8:
 
 Number of points N = 1000
-The integral is estimated to 528.446882266919
+The integral is estimated to 538.595990261298
 Exact integral is 554.666666666667
-The estimated error is 15.4337992695703
-The exact error is 26.2197843997474
+The estimated error is 15.88211387865
+The exact error is 16.0706764053682
 
 Number of points N = 100000
-The integral is estimated to 552.19877854786
+The integral is estimated to 552.136472514359
 Exact integral is 554.666666666667
-The estimated error is 1.59231531634031
-The exact error is 2.46788811880617
+The estimated error is 1.59210838304788
+The exact error is 2.53019415230813
 
 
 Himmelblau's function, ∫[0,6]dx ∫[0,6]dy (x^2+y-11)^2 + (x+y^2-7)^2:
 
 Number of points N = 100000
-The integral is estimated to 11419.5350543705
+The integral is estimated to 11337.0869446794
 Exact integral is 11390.4
-The estimated error is 40.5032072463702
-The exact error is 29.1350543704557
+The estimated error is 40.409507539248
+The exact error is 53.3130553206174
 
 We see that we get a better result using more points, and the 
 result converges towards the exact result.
@@ -32,10 +32,10 @@ result converges towards the exact result.
 Difficult singular integral, ∫[0,π]dx ∫[0,π]dy ∫[0,π]dz 1/[(1-cos(x)*cos(y)*cos(z)) * π^3]:
 
 Number of points N = 500000
-The integral is estimated to 1.41227792363524
+The integral is estimated to 1.38654581296484
 Exact integral is 1.39320392968568
-The estimated error is 0.0198681816958803
-The exact error is 0.0190739939495661
+The estimated error is 0.01153842276041
+The exact error is 0.00665811672083838
 
 
 
@@ -61,9 +61,17 @@ The estimated error is 0.00303299269660099
 The exact error is 0.000174612710954758
 
 
-We estimate the area of circle with radius 0.9 by integrating 
+We estimate the area of a circle with radius 2 by integrating 
 over a constant circular function.
 
-The area is estimated to 2.83317132045784
+We are using N = 25000 points
+The area is estimated to 12.5801329969934
+The exact area is 4π = 12.5663706143592
+The estimated error is 0.0143497513151148
+The exact error is 0.0137623826342388
 
 The stratified points can be seen in the figure Strat.svg
+
+With plain MC and 25000 points, we get the integral 12.671
+The estimated error is 0.0790495437051979
+The exact error is 0.104629385640827

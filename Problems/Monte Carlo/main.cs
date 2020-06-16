@@ -90,17 +90,6 @@ static void Main(){
 
 	WriteLine("______ Assignment C ______\n");
 	WriteLine("We estimate the integral of the difficult singular function using recursive \nstratified sampling\n");
-/*	a = new vector(new double[]{0,0,0});
-	b = new vector(new double[]{PI,PI,PI});
-	N = 500000;
-	exact = 1.3932039296856768591842462603255;
-	(integral,error) = mc.stratmc1(F_sing,a,b,N,false);
-	WriteLine($"Number of points N = {N}");
-        WriteLine($"The integral is estimated to {integral}");
-        WriteLine($"Exact integral is {exact}");
-        WriteLine($"The estimated error is {error}");
-        WriteLine($"The exact error is {Abs(exact-integral)}");
-        Write("\n");*/
 
 	double[] aa = new double[]{0,0,0};
 	double[] bb = new double[]{PI,PI,PI};
@@ -116,7 +105,7 @@ static void Main(){
 
 	Func<vector, double> f = delegate(vector x){
 		// This function is on a simple rectangular volume
-		if(x[0]*x[0]+x[1]*x[1]<=0.9){
+		if(x[0]*x[0]+x[1]*x[1]<=4){
 			return 1;
 			}
 		else{
@@ -124,13 +113,22 @@ static void Main(){
 			}
 		};
 
-	N=100000;
-	aa = new double[]{-1,-1};
-        bb = new double[]{1,1};
+	N=25000;
+	aa = new double[]{-2.5,-2.5};
+	bb = new double[]{2.5,2.5};
 	res = mc.stratmc(f,aa,bb,N,true);
-	WriteLine("We estimate the area of circle with radius 0.9 by integrating \nover a constant circular function.\n");
-	WriteLine($"The area is estimated to {res[0]}\n");
+	WriteLine("We estimate the area of a circle with radius 2 by integrating \nover a constant circular function.\n");
+	WriteLine($"We are using N = {N} points");
+	WriteLine($"The area is estimated to {res[0]}");
+	WriteLine($"The exact area is 4π = {4*PI}");
+	WriteLine($"The estimated error is {res[1]}");
+	WriteLine($"The exact error is {Abs(res[0]-4*PI)}\n");
 	WriteLine("The stratified points can be seen in the figure Strat.svg");
+
+	a = new vector(new double[]{-2.5,-2.5});
+	b = new vector(new double[]{2.5,2.5});
+	(integral,error)=mc.plainmc(f,a,b,N,false);
+	WriteLine($"\nWith plain MC and {N} points, we get the integral {integral}\nThe estimated error is {error}\nThe exact error is {Abs(integral-4*PI)}");
 
 	}
 }
