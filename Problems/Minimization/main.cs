@@ -19,7 +19,7 @@ static void Main(){
 	double acc=1e-4;
 
 	WriteLine("Rosenbrock's valley function:");
-	(vector r_min, double n_steps) = minimize.qnewton(F_RVF,xstart,acc);
+	(vector r_min, int n_steps) = minimize.qnewton(F_RVF,xstart,acc);
 	vector grad = minimize.gradient(F_RVF,r_min);
 	WriteLine($"Starting point: (x0, y0) = ({xstart[0]}, {xstart[1]})");
 	WriteLine($"The minimum is at (x_min, y_min) = ({r_min[0],10:g3}, {r_min[1],10:g3})");

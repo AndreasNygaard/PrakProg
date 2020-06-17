@@ -4,7 +4,7 @@ using static System.Double;
 
 public static class minimize{
 
-public static (vector,double) qnewton(
+public static (vector,int) qnewton(
 		Func<vector,double> f, 	/* objective function */
 		vector xstart,		/* starting point */
 		double acc=1e-3, 	/* accuracy */
