@@ -1,3 +1,42 @@
+____Assignment A____
+Eigenvalue Decomposition A=V*D*V^T
+Random symmetric matrix A:
+    -0.503     -0.779     -0.066      0.543      0.315 
+    -0.779     -0.134     -0.292      0.888     -0.797 
+    -0.066     -0.292      0.285     -0.943     -0.504 
+     0.543      0.888     -0.943      -0.36       0.98 
+     0.315     -0.797     -0.504       0.98      0.364 
+Number of sweeps=6
+Matrix with eigenvectors V:
+     0.397     -0.696     -0.437     -0.341      0.224 
+     0.555      -0.23      0.285      0.747   -0.00332 
+   -0.0947     -0.466      0.623     -0.313     -0.537 
+    -0.634     -0.433      0.189      0.268      0.551 
+     0.352      0.241      0.551     -0.395      0.599 
+V^T*A*V (should be diagonal):
+     -2.16          0          0          0          0 
+         0     -0.574          0          0          0 
+         0          0     -0.533          0          0 
+         0          0          0       1.08          0 
+         0          0          0          0       1.84 
+Eigenvalues matrix D:
+
+     -2.16          0          0          0          0 
+         0     -0.574          0          0          0 
+         0          0     -0.533          0          0 
+         0          0          0       1.08          0 
+         0          0          0          0       1.84 
+D=V^T*A*V, test passed
+
+
+Quantum particle in a box
+
+See figures A_eig_vec.svg and A_eig_val.svg. We can see that our energy (eigenvalue)
+calculation is accurate for the lowest 10-15% of the levels. The eigenfunctions
+look as they should from the analytical result - sinusoidal oscillations.
+
+
+
 ____Assignment B____
 Eigenvalue Decomposition A=V*D*V^T
 Random symmetric matrix A:
@@ -41,5 +80,14 @@ Number of rotations: 272
 
 
 
-Eigenvalues from highest to lowest
+See the figures B_rot.svg and B_time.svg for a comparison in
+how the different methods perform as a function of dimension.
+I have used the System.Diagnostics.Stopwatch to estimate times, since this
+proved easier than the POSIX time utility which was a bit tricky with my OS.
+From the figures we can see the O(n^3) behavior, which is explicitly
+calculated for the times in B_time.svg.
+
+
+By changing the rotation angle, we can get the highest Eigenvalues first.
+Eigenvalues from highest to lowest:
 Eigenvalues:       2.3       1.25      0.741     0.0712     -0.684      -1.23       -2.4 

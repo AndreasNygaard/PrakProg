@@ -54,9 +54,9 @@ main.exe: main.cs math.dll
 	mcs -r:math.dll $<
 
 LIBDIR=../../lib/matrix
-math.dll: $(LIBDIR)/vector.cs $(LIBDIR)/matrix.cs ../Minimization/minimize.cs network.cs min.cs
+math.dll: $(LIBDIR)/vector.cs $(LIBDIR)/matrix.cs ../Minimization/minimize.cs network.cs
 	mcs -t:library -out:$@ $^
 
 clean:
-	rm -f *.exe *.dll *.txt
+	rm -f *.exe *.dll *.txt *.svg
 

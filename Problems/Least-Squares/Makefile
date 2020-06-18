@@ -44,4 +44,4 @@ math.dll: $(LIBDIR)/vector.cs $(LIBDIR)/matrix.cs ../Linear-Equations/qrDecomp.c
 	mcs -t:library -out:$@ $^
 
 clean:
-	rm -f *.exe *.dll *.txt *.svg
+	rm -f *.exe *.dll *.txt *.svg *.log

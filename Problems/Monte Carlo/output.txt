@@ -5,25 +5,25 @@ Testing Monte Carlo integrator:
 Second-degree polynomial, ∫[0,8]dx 4*x^2 - 6*x + 8:
 
 Number of points N = 1000
-The integral is estimated to 538.595990261298
+The integral is estimated to 540.561215279937
 Exact integral is 554.666666666667
-The estimated error is 15.88211387865
-The exact error is 16.0706764053682
+The estimated error is 15.9053228978707
+The exact error is 14.1054513867292
 
 Number of points N = 100000
-The integral is estimated to 552.136472514359
+The integral is estimated to 556.311859250833
 Exact integral is 554.666666666667
-The estimated error is 1.59210838304788
-The exact error is 2.53019415230813
+The estimated error is 1.59692254497574
+The exact error is 1.64519258416681
 
 
 Himmelblau's function, ∫[0,6]dx ∫[0,6]dy (x^2+y-11)^2 + (x+y^2-7)^2:
 
 Number of points N = 100000
-The integral is estimated to 11337.0869446794
+The integral is estimated to 11407.5669602732
 Exact integral is 11390.4
-The estimated error is 40.409507539248
-The exact error is 53.3130553206174
+The estimated error is 40.6395312932858
+The exact error is 17.1669602732254
 
 We see that we get a better result using more points, and the 
 result converges towards the exact result.
@@ -32,10 +32,10 @@ result converges towards the exact result.
 Difficult singular integral, ∫[0,π]dx ∫[0,π]dy ∫[0,π]dz 1/[(1-cos(x)*cos(y)*cos(z)) * π^3]:
 
 Number of points N = 500000
-The integral is estimated to 1.38654581296484
+The integral is estimated to 1.38595047523603
 Exact integral is 1.39320392968568
-The estimated error is 0.01153842276041
-The exact error is 0.00665811672083838
+The estimated error is 0.00831960339697118
+The exact error is 0.00725345444964653
 
 
 
@@ -72,6 +72,6 @@ The exact error is 0.0137623826342388
 
 The stratified points can be seen in the figure Strat.svg
 
-With plain MC and 25000 points, we get the integral 12.671
-The estimated error is 0.0790495437051979
-The exact error is 0.104629385640827
+With plain MC and 25000 points, we get the integral 12.584
+The estimated error is 0.079055156441563
+The exact error is 0.0176293856408289

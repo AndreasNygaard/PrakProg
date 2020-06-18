@@ -4,7 +4,7 @@ Testing minimization routine:
 
 Rosenbrock's valley function:
 Starting point: (x0, y0) = (0, 0)
-The minimum is at (x_min, y_min) = (         1,          1)
+The minimum is at (x_min, y_min) = (1, 1)
 n_steps = 32
 Accuracy = 0.0001
 |gradient| = 4.63473669236431E-05
@@ -12,7 +12,7 @@ Accuracy = 0.0001
 
 Himmelblau's function:
 Starting point: (x0, y0) = (5, 3)
-The minimum is at (x_min, y_min) = (    -2.805,      3.131)
+The minimum is at (x_min, y_min) = (-2.805, 3.131)
 n_steps = 11
 Accuracy = 0.0001
 |gradient| = 1.4138087182908E-05
@@ -31,10 +31,13 @@ Error:                 2          2        1.9        1.9        1.9        1.9 
 We minimize the deviation to fit the data to the Breit-Wigner function:
 Starting point: (m0, Γ0, A0) = (120, 2, 6)
 The minimum is at (m_min, Γ_min, A_min) = (125.972191301839, 2.08632980358006, 9.87616555446814)
+Which means the mass is m = 125.972 GeV and the width is Γ = 2.0863 GeV
 n_steps = 62
 Accuracy = 0.001
 |gradient| = 0.000341513673915621
 |gradient| < accuracy: test passed
+
+The fit can be seen in the figure Higgs.svg.
 
 
 

@@ -3,15 +3,17 @@ all: Error.svg Strat.svg output.txt
 Error.svg: data.txt Makefile
 	rm -f fit.log
 	echo '\
-	set term svg enhanced size 640,480 background "white" font "Arial,18";\
+	set term svg enhanced size 1024,756 background "white" font "Arial,18";\
 	set out "$@";\
-	set key right bottom;\
+	set key out;\
+	set key center bottom;\
 	set tics out;\
 	set log x;\
 	set log y;\
 	set title "Error as a function of N";\
 	set xlabel "N";\
 	set ylabel "Error";\
+	set size 1.0,1.0;\
 	f(x) = a/sqrt(x)+b;\
 	fit f(x) "$<" using 1:2 via a,b;\
 	plot\

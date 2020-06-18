@@ -22,7 +22,7 @@ static void Main(){
 	(vector r_min, int n_steps) = minimize.qnewton(F_RVF,xstart,acc);
 	vector grad = minimize.gradient(F_RVF,r_min);
 	WriteLine($"Starting point: (x0, y0) = ({xstart[0]}, {xstart[1]})");
-	WriteLine($"The minimum is at (x_min, y_min) = ({r_min[0],10:g3}, {r_min[1],10:g3})");
+	WriteLine($"The minimum is at (x_min, y_min) = ({r_min[0],1:g3}, {r_min[1],1:g3})");
 	WriteLine($"n_steps = {n_steps}");
 	WriteLine($"Accuracy = {acc}");
 	WriteLine($"|gradient| = {grad.norm()}");
@@ -36,7 +36,7 @@ static void Main(){
 	(r_min, n_steps) = minimize.qnewton(F_HF,xstart,acc);
 	grad = minimize.gradient(F_HF,r_min);
 	WriteLine($"Starting point: (x0, y0) = ({xstart[0]}, {xstart[1]})");
-	WriteLine($"The minimum is at (x_min, y_min) = ({r_min[0],10:g4}, {r_min[1],10:g4})");
+	WriteLine($"The minimum is at (x_min, y_min) = ({r_min[0],1:g4}, {r_min[1],1:g4})");
 	WriteLine($"n_steps = {n_steps}");
 	WriteLine($"Accuracy = {acc}");
 	WriteLine($"|gradient| = {grad.norm()}");
@@ -71,12 +71,13 @@ static void Main(){
 	WriteLine("We minimize the deviation to fit the data to the Breit-Wigner function:");
 	grad = minimize.gradient(Dev,r_min);
         WriteLine($"Starting point: (m0, Γ0, A0) = ({xstart[0]}, {xstart[1]}, {xstart[2]})");
-        WriteLine($"The minimum is at (m_min, Γ_min, A_min) = ({r_min[0]}, {r_min[1]}, {r_min[2]})");
+        WriteLine($"The minimum is at (m_min, Γ_min, A_min) = ({r_min[0]}, {r_min[1]}, {r_min[2]})\nWhich means the mass is m = {r_min[0],1:g6} GeV and the width is Γ = {r_min[1],1:g5} GeV");
         WriteLine($"n_steps = {n_steps}");
         WriteLine($"Accuracy = {acc}");
         WriteLine($"|gradient| = {grad.norm()}");
         if(grad.norm()<acc)WriteLine("|gradient| < accuracy: test passed");
         else            WriteLine("|gradient| > accuracy: TEST FAILED");
+	WriteLine("\nThe fit can be seen in the figure Higgs.svg.");
         Write("\n\n\n");
 	for(int i=0;i<E.size;i++)
 		Error.WriteLine($"{E[i]} {sig[i]} {err[i]}");

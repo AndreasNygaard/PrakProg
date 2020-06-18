@@ -10,7 +10,6 @@ public static int Main(string[] args){
 	if (args.Length > 1) method = args[1];
 	if (args.Length > 2) nvalues = int.Parse(args[2]);
 	if(method!="cyclic" && method!="values")return 1;
-	//Error.WriteLine("n={0}",n);
 
 	var rnd = new Random(1);
 	var a = new matrix(n,n);
