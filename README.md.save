@@ -4,18 +4,9 @@
 ### ________ SOFTWARE REQUIREMENTS ________ ###
 
 
-To use this directory, one must meet following software requirement:
+For using this directory, one should have the following softwares:
 
-- GNU make
-- Csharp mono
-- Gnuplot
-- GCC (for the "Exercises" directory)
-
-If something doesn't function properly, consider updating these
-softwares
-
-
-
+- 
 
 ### ________ INSTRUCTIONS FOR USAGE ________ ###
 
@@ -41,7 +32,7 @@ The "Exam" directory contains a solution of exam problem 11:
 since the last two digits of my student ID number is 78 and 
 there are 22 problems begining with exam problem 0 and ending 
 with exam problem 21, so a student with 22 as the last digits
-will get the 22nd problem, which is exam problem 21.
+would get the 22nd problem, which is exam problem 21.
 
 11 is thus the result of the calculation (78 mod 22) - 1 = 11
 We need to subtract 1 at the end because the numbering starts at 0.

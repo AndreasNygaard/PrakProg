@@ -1,0 +1,76 @@
+x:         1          1 
+x:       0.5      0.333 
+x:      0.25      0.667 
+y:         1          1 
+y:     0.772     0.0351 
+y:     0.545     0.0702 
+______ Exam problem 11 ______
+
+We test the pseudo- and quasi-random methods on the following integral:
+Himmelblau's function, ∫[0,6]dx ∫[0,6]dy (x^2+y-11)^2 + (x+y^2-7)^2
+
+With regular Monte Carlo (Pseudo-random)
+
+Number of points N = 5000
+The integral is estimated to 11430.2765131332
+Exact integral is 11390.4
+The estimated error is 182.095798524128
+The exact error is 39.8765131332475
+
+With the Lattice sequence (Quasi-random)
+
+Number of points N = 5000
+The integral is estimated to 11296.7228876344
+Exact integral is 11390.4
+The exact error is 93.6771123655781
+
+With the Halton sequence (Quasi-random)
+
+Number of points N = 5000
+The integral is estimated to 11363.3999602332
+Exact integral is 11390.4
+The exact error is 27.0000397667663
+
+The estimated errors of the quasi-random methods are no good, since the
+central limit theorem doesn't apply when the points are not statistically
+independent. Instead we use the difference in the integral estimates of
+the two quasi-random sequences Lattice and Halton as an error estimate.
+
+The figure Sample.svg shows the sampling points of these three methods
+when calculating the integral of the Himmelblau's function. The lattice
+is very clear in the Lattice sequence, and the Halton sequence gives a
+much more evenly distributed sampling than the pseudo-random Monte Carlo.
+
+
+
+We will use the Himmelblau's function to test the error as a function of N.
+
+The result is seen in the figure Convergence2D.svg.
+
+
+We will also check the convergence of a 5D integral in the region [0,2] for
+all dimensions:
+f(x,y,z,p,q) = x·p^2 -10·z·q + 5·y^2
+
+The exact integral is then ∫ f dV = -64
+
+The result is seen in the figure Convergence5D.svg.
+
+
+We clearly see that the error of the quasi-random method falls faster with respect
+to N than that of the pseudo-random method which falls as O(1/√N), both in 2D and
+5D. According to the Wikipedia page 'Quasi-Monte Carlo method', an upper bound on
+the error estimation should fall as O(log(N)^s/N), where s is the dimension. In the
+2D case, it is not clear from the figure whether the quasi-random error falls as
+O(log(N)^2/N) or as O(log(N)/N), but we can however see that it doesn't fall slower
+than O(log(N)^2/N) and it doesn't falls as fast as just O(1/N).
+When examining the 5D case, we see that the O(log(N)^5/N) behavior might hold for
+smaller N (still large enough to give a reasonable result though), but for very
+large N it seems to fall down to an O(log(N)^2/N) behavior or at least faster than
+the upper bound. We can once again think of the O(1/N) behavior as a lower bound,
+which brings the conclusion:
+
+For quasi-random methods, the error as a function of N falls somewhere between the
+behaviors O(1/N) (lower bound) and O(log(N)^s/N) (upper bound) where s is the 
+dimension, thus making it faster converging than the pseudo-random method with
+convergence rate O(1/√N).
