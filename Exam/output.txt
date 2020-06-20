@@ -1,9 +1,3 @@
-x:         1          1 
-x:       0.5      0.333 
-x:      0.25      0.667 
-y:         1          1 
-y:     0.772     0.0351 
-y:     0.545     0.0702 
 ______ Exam problem 11 ______
 
 We test the pseudo- and quasi-random methods on the following integral:
@@ -12,10 +6,10 @@ Himmelblau's function, ∫[0,6]dx ∫[0,6]dy (x^2+y-11)^2 + (x+y^2-7)^2
 With regular Monte Carlo (Pseudo-random)
 
 Number of points N = 5000
-The integral is estimated to 11430.2765131332
+The integral is estimated to 11414.6058438721
 Exact integral is 11390.4
-The estimated error is 182.095798524128
-The exact error is 39.8765131332475
+The estimated error is 181.598625489668
+The exact error is 24.2058438720505
 
 With the Lattice sequence (Quasi-random)
 

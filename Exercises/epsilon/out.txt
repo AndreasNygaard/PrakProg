@@ -1,0 +1,22 @@
+my max int = 2147483647
+Machine says max int is 2147483647
+my min int = -2147483648
+Machine says min int is -2147483648
+
+
+epsilon (double) is 2.22044604925031E-16
+epsilon (float) is 1.192093E-07
+
+
+float_sum_up=15.40368
+float_sum_down=18.80792
+
+
+double_sum_up=21.3716310803036
+double_sum_down=21.3716310812321
+
+
+Checking my approximation function with tau=1e-9 and epsilon=1e-9 for 2 and 2.000000002
+False
+Checking my approximation function with tau=1e-9 and epsilon=1e-9 for 2 and 2.0000000002
+True

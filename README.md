@@ -10,6 +10,7 @@ To use this directory, one must meet following software requirement:
 - Csharp mono
 - Gnuplot
 - GCC (for the "Exercises" directory)
+- latex
 
 If something doesn't function properly, consider updating these
 softwares
@@ -46,9 +47,13 @@ will get the 22nd problem, which is exam problem 21.
 11 is thus the result of the calculation (78 mod 22) - 1 = 11
 We need to subtract 1 at the end because the numbering starts at 0.
 
+(It has been pointed out to me that I really should have made
+exam problem 12 after all, but I have been given permission to
+hand in the solution to exam problem 11 anyways)
+
 The "Exam" directory is like the other problems in the "Problems"
 directory, so a file called output.txt explains the solution and 
-refers to the necessary figure(s).
+refers to the necessary figures.
 
 
 

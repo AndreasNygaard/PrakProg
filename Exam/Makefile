@@ -28,10 +28,9 @@ Convergence2D.svg: data.txt Makefile
 	,f(x) with lines lw 3 dt 3 lt rgb "black" title "O(1/√N)"\
 	,"$<" index 1 using 1:2 with lines lw 3 lt rgb "magenta" title "Quasi-random estimated error" \
 	,"$<" index 1 using 1:3 with lines lw 3 lt rgb "blue" title "Quasi-random actual error" \
-	,g(x) with lines lw 3 dt 2 lt rgb "grey" title "O(1/N)"\
-	,g1(x) with lines lw 3 dt 4 lt rgb "black" title "O(log(N)/N)"\
-	,g2(x) with lines lw 3 dt 2 lt rgb "black" title "O(log(N)^2/N)"\
-	,g3(x) with lines lw 3 dt 4 lt rgb "grey" title "O(log(N)^3/N)";\
+	,g(x) with lines lw 3 dt 2 lt rgb "black" title "O(1/N)"\
+	,g1(x) with lines lw 3 dt 2 lt rgb "grey" title "O(log(N)/N)"\
+	,g2(x) with lines lw 3 dt 4 lt rgb "black" title "O(log(N)^2/N)";\
 	'| gnuplot
 
 Convergence5D.svg: data.txt Makefile
@@ -70,9 +69,9 @@ Convergence5D.svg: data.txt Makefile
 	,f(x) with lines lw 3 dt 3 lt rgb "black" title "O(1/√N)"\
 	,"$<" index 3 using 1:2 with lines lw 3 lt rgb "magenta" title "Quasi-random estimated error" \
 	,"$<" index 3 using 1:3 with lines lw 3 lt rgb "blue" title "Quasi-random actual error" \
-	,g(x) with lines lw 3 dt 2 lt rgb "grey" title "O(1/N)"\
+	,g(x) with lines lw 3 dt 2 lt rgb "black" title "O(1/N)"\
 	,g1(x) with lines lw 3 dt 4 lt rgb "grey" title "O(log(N)/N)"\
-	,g2(x) with lines lw 3 dt 2 lt rgb "black" title "O(log(N)^2/N)"\
+	,g2(x) with lines lw 3 dt 2 lt rgb "grey" title "O(log(N)^2/N)"\
 	,g3(x) with lines lw 3 dt 3 lt rgb "grey" title "O(log(N)^3/N)"\
 	,g4(x) with lines lw 3 dt 5 lt rgb "grey" title "O(log(N)^4/N)"\
 	,g5(x) with lines lw 3 dt 4 lt rgb "black" title "O(log(N)^5/N)";\
@@ -84,24 +83,15 @@ Convergence5D.svg: data.txt Makefile
 	plot [100:10000][0.03:20]\
 	 "$<" index 3 using 1:2 with lines lw 3 lt rgb "magenta" title "Quasi-random estimated error" \
 	,"$<" index 3 using 1:3 with lines lw 3 lt rgb "blue" title "Quasi-random actual error" \
-	,g(x) with lines lw 3 dt 2 lt rgb "grey" title "O(1/N)"\
+	,g(x) with lines lw 3 dt 2 lt rgb "black" title "O(1/N)"\
 	,g1(x) with lines lw 3 dt 4 lt rgb "grey" title "O(log(N)/N)"\
-	,g2(x) with lines lw 3 dt 2 lt rgb "black" title "O(log(N)^2/N)"\
+	,g2(x) with lines lw 3 dt 2 lt rgb "grey" title "O(log(N)^2/N)"\
 	,g3(x) with lines lw 3 dt 3 lt rgb "grey" title "O(log(N)^3/N)"\
 	,g4(x) with lines lw 3 dt 5 lt rgb "grey" title "O(log(N)^4/N)"\
 	,g5(x) with lines lw 3 dt 4 lt rgb "black" title "O(log(N)^5/N)";\
 	show arrow;\
 	unset multiplot;\
 	'| gnuplot
-
-#	set key at 0.2,0.0;\
-
-#	,g4(x) with lines lw 3 dt 5 lt rgb "grey" title "O(log(N)^4/N)"\
-#	,g5(x) with lines lw 3 dt 4 lt rgb "black" title "O(log(N)^5/N);"\
-
-#	 "$<" index 2 using 1:2 with lines lw 3 lt rgb "cyan" title "Pseudo-random estimated error" \
-#        ,"$<" index 2 using 1:3 with lines lw 3 lt rgb "red" title "Pseudo-random actual error" \
-#        ,f(x) with lines lw 3 dt 3 lt rgb "black" title "O(1/√N)"\
 
 Sample.svg: sample_points.txt Makefile
 	echo '\
@@ -124,7 +114,7 @@ Sample.svg: sample_points.txt Makefile
 	plot "$<" index 1 using 1:2 with points ps 0.15 pt 7 lt rgb "black" title "Lattice sampling";\
 	set key center bottom;\
 	set rmargin;\
-	plot "$<" index 2 using 1:2 with points ps 0.15 pt 7 lt rgb "black" title "Van der Corput sampling";\
+	plot "$<" index 2 using 1:2 with points ps 0.15 pt 7 lt rgb "black" title "Halton sampling";\
 	unset multiplot;\
 	'|gnuplot
 

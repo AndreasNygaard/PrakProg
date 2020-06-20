@@ -1,0 +1,32 @@
+hællåµ
+100>1
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+While loop: i=0
+While loop: i=1
+While loop: i=2
+While loop: i=3
+While loop: i=4
+While loop: i=5
+While loop: i=6
+While loop: i=7
+While loop: i=8
+While loop: i=9
+While loop: i(do)=0
+While loop: i(do)=1
+While loop: i(do)=2
+While loop: i(do)=3
+While loop: i(do)=4
+While loop: i(do)=5
+While loop: i(do)=6
+While loop: i(do)=7
+While loop: i(do)=8
+While loop: i(do)=9

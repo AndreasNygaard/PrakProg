@@ -1,0 +1,17 @@
+set encoding utf8
+set title "Complex Gamma-function"
+set term svg
+set out "Complex-Gamma.svg"
+set xlabel "Re(z)"
+set ylabel "Im(z)"
+set zlabel "|Γ(z)|"
+set tics out
+set ticslevel 0
+set key off
+set dgrid3d 150,150 qnorm 5
+set pm3d clip1in
+set pm3d noborder
+set cbrange [*:6.5]
+set view ,330
+splot [:][:][0:6.5] "out.complex-gamma.txt" u 1:2:\
+( $3<6.5 ? $3 : 6.5 ) w pm3d

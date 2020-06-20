@@ -6,22 +6,9 @@ using System.IO;
 class main{
 
 static void Main(){
-	halton RNDH = new halton(2);
-	lattice RNDL = new lattice(2);
-	vector x = new vector(new double[]{1,1});
-	vector y = x.copy();
-	x.print("x:");
-	RNDH.next(x);
-	x.print("x:");
-	RNDH.next(x);
-	x.print("x:");
-	y.print("y:");
-	RNDL.next(y);
-	y.print("y:");
-	RNDL.next(y);
-	y.print("y:");
 
 	WriteLine("______ Exam problem 11 ______\n");
+
 	Func<vector,double> F_HF=delegate(vector z){
 		return Pow(Pow(z[0],2)+z[1]-11,2)+Pow(z[0]+Pow(z[1],2)-7,2);
 		};
