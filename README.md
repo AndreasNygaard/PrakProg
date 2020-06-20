@@ -8,12 +8,19 @@ To use this directory, one must meet following software requirement:
 
 - GNU make
 - Csharp mono
-- Gnuplot
+- Gnuplot (with cairo)
 - GCC (for the "Exercises" directory)
 - latex
 
-If something doesn't function properly, consider updating these
-softwares
+If something doesn't function properly, consider updating thesesoftwares
+
+When using gnuplot figures in latex documents, the gnuplot terminal is set
+to pngcairo. A new update has caused som problems on OS X, but it should
+function properly with Ubuntu and other Linux distributions. A solution
+for OS X users is to install a prevoius version of a gnuplot dependency:
+
+	brew uninstall --ignore-dependencies pango
+	brew install iltommi/brews/pango
 
 
 
@@ -60,14 +67,14 @@ refers to the necessary figures.
 
 ### Exercises ###
 
-The "Exercises" directory contains the exercises from the course and the solutions
-are not self-explanatory. 
+The "Exercises" directory contains the exercises from the course 
+and the solutions are not self-explanatory. 
 
-One should rather have the exercises at hand to know what
-questions my solutions are answering. 
+One should rather have the exercises at hand to know what questions 
+my solutions are answering. 
 
-Some of the solutions will be in files named
-out.txt or output.txt and other solutions will merely be indicative plots
+Some of the solutions will be in files named out.txt and other 
+solutions will merely be indicative plots
 
 
 

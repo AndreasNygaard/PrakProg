@@ -1,10 +1,10 @@
-\documentclass[letterpaper,12pt]{article}
-\usepackage{tabularx} % extra features for tabular environment
-\usepackage{amsmath}  % improve math presentation
+\documentclass{article}
 \usepackage{graphicx} % takes care of graphic including machinery
-\usepackage[margin=1in,letterpaper]{geometry} % decreases margins
-\usepackage{cite} % takes care of citations
-\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\usepackage{geometry} % decreases margins
+\usepackage{amsmath}
+\usepackage{cite}
+\usepackage[final]{hyperref}
+\usepackage{amsfonts}
 \hypersetup{
 	colorlinks=true,       % false: boxed links; true: colored links
 	linkcolor=blue,        % color of internal links
@@ -15,141 +15,61 @@
 
 %++++++++++++++++++++++++++++++++++++++++
 
-
+\parindent = 0 pt
 \begin{document}
 
-\title{Phys3201 Template GT}
-\author{A. Partner, B. Partner, and C. Partner}
+\title{Gamma Function}
+\author{Andreas Nygaard}
 \date{\today}
 \maketitle
 
-\begin{abstract}
-In this experiment we studied pendulum motion in a non-uniformly accelerating reference frame. \textbf{Special notes:} Prof Goldman specifically requested to not have ``100" sig figs, put font on figure axes in readable size, and don't put grids on plots!
-\end{abstract}
+\section{Definition}
 
+This report is concerning the non-simple function, the Gamma function, $\Gamma(x)$. This is a generalization
+of the factorial operator ($n!$) for integers to non-integers as well. In fact, the Gamma function satisfies
+$\Gamma(n)=(n-1)!$ for any positive integer. 
+\\
 
-\section{Introduction}
-
-Motivate why you chose the problem that you did. Why is it interesting? 
-
-
-\section{Background}
-
-Give a brief summary of the physical theory, include any equations necessary, and cite any references you want to include. Here is how you insert an equation. According to
-references~\cite{melissinos, Cyr, Wiki} the dependence of interest is given
-by
-\begin{gather*}
-   \mathcal{L} =  \frac{1}{2} m \ell^2 ( \dot{\theta}+\dot{\phi}_0)^2 - m g_e(t) \ell \cos(\theta)\\
-   \\
-   m\ell^2 (\ddot{\theta} + \ddot{\phi}_0) = mg_e\ell\sin(\theta)\\
-\end{gather*}
+For any complex number, $z$, with a real part larger than zero, $\mathrm{Re}(z)>0$, we can define the Gamma
+function as\cite{wiki}
 \begin{equation}
-   \ddot{\phi}(t) = -\frac{g_e(t)}{\ell} \sin\left(\phi(t)-\phi_0(t)\right)
-   \label{Eq:equation1} %the label lets you refer to the equation later
+	\Gamma(z)=\int_0^\infty x^z\exp(-x) \mathrm{d}x \,.
+\end{equation}\label{eq:int}
+This is known as the \textit{Euler integral of the second kind}. This function also satisfies the equation
+\cite{wiki}
+\begin{equation}\label{eq:rel}
+	\Gamma(1-z)\Gamma(z)=\frac{\pi}{\sin(\pi z)},\quad z \notin \mathbb{Z},
 \end{equation}
+such that we are able to define the Gamma function for negative real parts as well. Equation \ref{eq:rel}
+can obviously be rewritten to
+\begin{equation}\label{eq:neg}
+	\Gamma(z)=\frac{\pi}{\sin(\pi z)\Gamma(1-z)},\quad z \notin \mathbb{Z},
+\end{equation}
+which means that any complex number, $z$,  with a negative real part can be calculated using the integral
+in equation \ref{eq:int} with $(1-z)$ as the argument (which must then have a positive real part).
 
-\begin{figure}[!h]
+\section{Calculation}
+
+I have calculated the Gamma function using equations \ref{eq:int} and \ref{eq:neg} in C\# and the result is
+shown in figure \ref{fig:Gamma}. Tabulated values from the Gamma function implemented in the C language
+are also shown in the figure. We can clearly see why equations \ref{eq:rel} and \ref{eq:neg} do not hold for integers,
+since the function diverges at negative integers.
+
+\begin{figure}
     \centering
-    \includegraphics[width=.8\textwidth]{pendulum.jpg}
-    \caption{Pendulum that starts at rest in an accelerating frame. If the acceleration is not constant then the apparent vertical, and thus $\phi_0$ will change with time}
+    \includegraphics[width=\textwidth]{Plot.png}
+    \caption{\textit{The Gamma function calculated with C\# along with tabulated values from the implemented Gamma function
+in the C language.}}
+    \label{fig:Gamma}
 \end{figure}
 
 
-\section{Methods}
-
-
-Give a schematic of the experimental setup(s) used in the experiment (see
-figure~\ref{fig:samplesetup}). Give the description of  abbreviations
-either in the figure caption or in the text. Write a description of what is
-going on. 
-
-%\begin{figure}[ht] 
-        % read manual to see what [ht] means and for other possible options
-%        \centering \includegraphics[width=0.8\columnwidth]{sr_setup}
-        % note that in above figure file name, "sr_setup",
-        % the file extension is missing. LaTeX is smart enough to find
-        % apropriate one (i.e. pdf, png, etc.)
-        % You can add this extention yourself as it seen below
-        % both notations are correct but above has more flexibility
-        %\includegraphics[width=1.0\columnwidth]{sr_setup.pdf}
-%        \caption{
-%                \label{fig:samplesetup} % spaces are big no-no withing labels
-                % things like fig: are optional in the label but it helps
-                % to orient yourself when you have multiple figures,
-                % equations and tables
-%                Every figure MUST have a caption.
-%        }
-%\end{figure}
-
-and eventually arrived to the
-balanced photodiode as seen in the figure~\ref{fig:samplesetup}.
-
-
-\section{Results}
-
-In this section you will need to show your experimental results. Use tables and
-graphs when it is possible. Table~\ref{tbl:bins} is an example.
-
-\begin{table}[ht]
-\begin{center}
-\caption{Every table needs a caption.}
-\label{tbl:bins} % spaces are big no-no withing labels
-\begin{tabular}{|cc|} 
-\hline
-\multicolumn{1}{|c}{$x$ (m)} & \multicolumn{1}{c|}{$V$ (V)} \\
-\hline
-0.0044151 &   0.0030871 \\
-0.0021633 &   0.0021343 \\
-0.0003600 &   0.0018642 \\
-0.0023831 &   0.0013287 \\
-\hline
-\end{tabular}
-\end{center}
-\end{table}
-
-Analysis of equation~\ref{eq:equation1} shows ...
-
-
-%\begin{figure}
-%    \centering
-%    \includegraphics[width=.7\textwidth]{tanh_vs_const_1.png}
-%    \caption{Hyperbolic tangent acceleration vs immediate constant acceleration. The slow approach to the same asymptotic value of 2 meters per second per second induces a lag in the oscillation and also diminishes the amplitude of oscillation.}
-%\end{figure}
-
-For example, it is easy to conclude that the
-experiment and theory match each other rather well if you look at
-Fig.~\ref{fig:samplesetup} and Fig.~\ref{fig:exp_plots}.
-
-
-\section{Conclusions}
-Here you briefly summarize your findings. Did you learn any new physics? Was everything as expected?
-
-
-\section{Future Work}
-Since you had limited time to work on this project, what questions are left outstanding? What would be your next steps? 
-
-
-%++++++++++++++++++++++++++++++++++++++++
-% References section will be created automatically 
-% with inclusion of "thebibliography" environment
-% as it shown below. See text starting with line
-% \begin{thebibliography}{99}
-% Note: with this approach it is YOUR responsibility to put them in order
-% of appearance.
+%+++++++++++++++++++++++++++++++++++++++
 
 \begin{thebibliography}{99}
 
-\bibitem{melissinos}
-A.~C. Melissinos and J. Napolitano, \textit{Experiments in Modern Physics},
-(Academic Press, New York, 2003).
-
-\bibitem{Cyr}
-N.\ Cyr, M.\ T$\hat{e}$tu, and M.\ Breton,
-% "All-optical microwave frequency standard: a proposal,"
-IEEE Trans.\ Instrum.\ Meas.\ \textbf{42}, 640 (1993).
-
-\bibitem{Wiki} \emph{Expected value},  available at
-\texttt{http://en.wikipedia.org/wiki/Expected\_value}.
+\bibitem{wiki} \emph{Gamma function},  available at
+\url{http://en.wikipedia.org/wiki/Gamma_function}.
 
 \end{thebibliography}
 

@@ -1,0 +1,16 @@
+set term pngcairo enhanced size 1024,1024 background "white" font "Times,18"
+set title "Gamma-function: computed vs. tabulated"
+set out "Plot.png"
+set xlabel "x"
+set ylabel "y"
+set xzeroaxis
+set yzeroaxis
+set key bottom right
+set tics out
+set arrow from -1,-10 to -1,10 lw 1 dt 2 lc rgb "blue" nohead
+set arrow from -2,-10 to -2,10 lw 1 dt 2 lc rgb "blue" nohead
+set arrow from -3,-10 to -3,10 lw 1 dt 2 lc rgb "blue" nohead
+show arrow
+plot [:5][-10:10] "out.gamma.txt" with lines lw 2 lt rgb "red" title "Γ(x)" \
+    ,"table.gamma.txt" with points pt 6 ps 3 title "tabulated"
+
