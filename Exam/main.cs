@@ -120,7 +120,7 @@ static void Main(){
 	WriteLine("the error estimation should fall as O(log(N)^s/N), where s is the dimension. In the");
 	WriteLine("2D case, it is not clear from the figure whether the quasi-random error falls as");
 	WriteLine("O(log(N)^2/N) or as O(log(N)/N), but we can however see that it doesn't fall slower");
-	WriteLine("than O(log(N)^2/N) and it doesn't falls as fast as just O(1/N).");
+	WriteLine("than O(log(N)^2/N) and it doesn't fall as fast as just O(1/N).");
 	WriteLine("When examining the 5D case, we see that the O(log(N)^5/N) behavior might hold for");
 	WriteLine("smaller N (still large enough to give a reasonable result though), but for very");
 	WriteLine("large N it seems to fall down to an O(log(N)^2/N) behavior or at least faster than");

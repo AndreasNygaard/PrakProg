@@ -6,10 +6,10 @@ Himmelblau's function, ∫[0,6]dx ∫[0,6]dy (x^2+y-11)^2 + (x+y^2-7)^2
 With regular Monte Carlo (Pseudo-random)
 
 Number of points N = 5000
-The integral is estimated to 11414.6058438721
+The integral is estimated to 11268.0654140886
 Exact integral is 11390.4
-The estimated error is 181.598625489668
-The exact error is 24.2058438720505
+The estimated error is 175.174419641666
+The exact error is 122.334585911392
 
 With the Lattice sequence (Quasi-random)
 
@@ -57,7 +57,7 @@ to N than that of the pseudo-random method which falls as O(1/√N), both in 2D 
 the error estimation should fall as O(log(N)^s/N), where s is the dimension. In the
 2D case, it is not clear from the figure whether the quasi-random error falls as
 O(log(N)^2/N) or as O(log(N)/N), but we can however see that it doesn't fall slower
-than O(log(N)^2/N) and it doesn't falls as fast as just O(1/N).
+than O(log(N)^2/N) and it doesn't fall as fast as just O(1/N).
 When examining the 5D case, we see that the O(log(N)^5/N) behavior might hold for
 smaller N (still large enough to give a reasonable result though), but for very
 large N it seems to fall down to an O(log(N)^2/N) behavior or at least faster than

@@ -1,7 +1,7 @@
 
 
 *******************************************************************************
-Sat Jun 20 00:48:17 2020
+Sun Jun 21 04:00:18 2020
 
 
 FIT:    data read from "data.txt" index 2 using 1:2:2
@@ -12,24 +12,24 @@ function used for fitting: f(x)
 fitted parameters initialized with current variable values
 
 iter      chisq       delta/lim  lambda   a             b            
-   0 2.4166949696e+03   0.00e+00  4.02e+00    1.000000e+00   1.000000e+00
-   6 5.8236987897e-02  -3.10e-02  4.02e-06    3.428054e+02   6.463165e-04
+   0 2.4161212609e+03   0.00e+00  4.02e+00    1.000000e+00   1.000000e+00
+   6 1.5248895260e-02  -1.21e-01  4.02e-06    3.438211e+02   2.343649e-04
 
 After 6 iterations the fit converged.
-final sum of squares of residuals : 0.058237
-rel. change during last iteration : -3.09761e-07
+final sum of squares of residuals : 0.0152489
+rel. change during last iteration : -1.20815e-06
 
 degrees of freedom    (FIT_NDF)                        : 98
-rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0243773
-variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000594255
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.012474
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000155601
 p-value of the Chisq distribution (FIT_P)              : 1
 
 Final set of parameters            Asymptotic Standard Error
 =======================            ==========================
-a               = 342.805          +/- 1.4          (0.4084%)
-b               = 0.000646316      +/- 0.0007168    (110.9%)
+a               = 343.821          +/- 0.7182       (0.2089%)
+b               = 0.000234365      +/- 0.0003674    (156.8%)
 
 correlation matrix of the fit parameters:
                 a      b      
 a               1.000 
-b              -0.801  1.000 
+b              -0.802  1.000 

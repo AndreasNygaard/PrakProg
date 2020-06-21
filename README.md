@@ -12,7 +12,7 @@ To use this directory, one must meet following software requirement:
 - GCC (for the "Exercises" directory)
 - latex
 
-If something doesn't function properly, consider updating thesesoftwares
+If something doesn't function properly, consider updating these softwares
 
 When using gnuplot figures in latex documents, the gnuplot terminal is set
 to pngcairo. A new update has caused som problems on OS X, but it should
@@ -60,7 +60,14 @@ hand in the solution to exam problem 11 anyways)
 
 The "Exam" directory is like the other problems in the "Problems"
 directory, so a file called output.txt explains the solution and 
-refers to the necessary figures.
+refers to the necessary figures. There is also generated a file
+called report.pdf using latex, which explains results and contains
+the figures. 
+
+Because of the large amount of data necessary to produce the plots
+for the solution, the 'make' command takes around 10 minutes on my
+own hardware. I have chosen this amount of data to better see the
+the difference between the convergence rates.
 
 
 

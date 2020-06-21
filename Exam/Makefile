@@ -1,9 +1,13 @@
-all: Convergence2D.svg Convergence5D.svg Sample.svg output.txt
+all: report.pdf Convergence2D.png Convergence5D.png Sample.png output.txt
 
-Convergence2D.svg: data.txt Makefile
+report.pdf: report.tex Convergence2D.png Convergence5D.png Sample.png
+	pdflatex $<
+	pdflatex $<
+
+Convergence2D.png: data.txt Makefile
 	rm -f fit.log
 	echo '\
-	set term svg enhanced size 1024,756 background "white" font "Arial,18";\
+	set term pngcairo enhanced size 1024,756 background "white" font "Times,18";\
 	set out "$@";\
 	set key out;\
 	set key center bottom;\
@@ -33,10 +37,10 @@ Convergence2D.svg: data.txt Makefile
 	,g2(x) with lines lw 3 dt 4 lt rgb "black" title "O(log(N)^2/N)";\
 	'| gnuplot
 
-Convergence5D.svg: data.txt Makefile
+Convergence5D.png: data.txt Makefile
 	rm -f fit.log
 	echo '\
-	set term svg enhanced size 1524,880 background "white" font "Arial,18";\
+	set term pngcairo enhanced size 1524,880 background "white" font "Times,18";\
 	set out "$@";\
 	set multiplot layout 1,2 title "Error as a function of N - 5D function f(x,y,z,p,q)";\
 	set key out;\
@@ -61,8 +65,8 @@ Convergence5D.svg: data.txt Makefile
 	set origin 0.0,0.0;\
 	set style rect back fs empty border lc rgb "black";\
 	set object 1 rect from 100,0.03 to 10000,20 lw 2;\
-	set arrow 1 from screen 0.271,0.685 to screen 0.732,0.113 lw 2 nohead;\
-	set arrow 2 from screen 0.271,0.833 to screen 0.732,0.869 lw 2 nohead;\
+	set arrow 1 from screen 0.267,0.664 to screen 0.726,0.098 lw 2 nohead;\
+	set arrow 2 from screen 0.267,0.832 to screen 0.726,0.873 lw 2 nohead;\
 	plot [100:40000000][0.000001:100]\
 	 "$<" index 2 using 1:2 with lines lw 3 lt rgb "cyan" title "Pseudo-random estimated error" \
 	,"$<" index 2 using 1:3 with lines lw 3 lt rgb "red" title "Pseudo-random actual error" \
@@ -93,9 +97,15 @@ Convergence5D.svg: data.txt Makefile
 	unset multiplot;\
 	'| gnuplot
 
-Sample.svg: sample_points.txt Makefile
+
+# When using Ariel as font
+#set arrow 1 from screen 0.271,0.685 to screen 0.732,0.113 lw 2 nohead;\
+#set arrow 2 from screen 0.271,0.833 to screen 0.732,0.869 lw 2 nohead;\
+
+
+Sample.png: sample_points.txt Makefile
 	echo '\
-	set term svg enhanced size 1500,500 background "white" font "Arial,18";\
+	set term pngcairo enhanced size 1500,500 background "white" font "Times,18";\
 	set out "$@";\
 	set multiplot layout 1,3 title "Sampling Points of Pseudo- and Quasi-Random Sampling";\
 	set size ratio 1;\
@@ -130,5 +140,5 @@ math.dll: $(LIBDIR)/vector.cs $(LIBDIR)/matrix.cs mc.cs lattice.cs halton.cs
 	mcs -t:library -out:$@ $^
 
 clean:
-	rm -f *.exe *.dll *.txt *.log *.svg
+	rm -f *.exe *.dll *.txt *.log *.png *.out *.aux *.pdf
 
