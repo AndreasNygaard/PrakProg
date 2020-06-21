@@ -6,10 +6,10 @@ Himmelblau's function, ∫[0,6]dx ∫[0,6]dy (x^2+y-11)^2 + (x+y^2-7)^2
 With regular Monte Carlo (Pseudo-random)
 
 Number of points N = 5000
-The integral is estimated to 11268.0654140886
+The integral is estimated to 11630.9803124766
 Exact integral is 11390.4
-The estimated error is 175.174419641666
-The exact error is 122.334585911392
+The estimated error is 184.121152926264
+The exact error is 240.580312476604
 
 With the Lattice sequence (Quasi-random)
 
@@ -37,7 +37,16 @@ much more evenly distributed sampling than the pseudo-random Monte Carlo.
 
 
 
-We will use the Himmelblau's function to test the error as a function of N.
+We will use a 1D function to test the error as a function of N. We calculate 
+the integral from x=0 to x=π of the function:
+f(x) = x^3·exp(-x^2)
+
+The exact integral is then ∫[0,π] f dx = 1/2-1/2·exp(-π^2)·(1+π^2) = 0.49972
+
+The result is seen in the figure Convergence1D.svg.
+
+
+We will also use the Himmelblau's function to test the convergence.
 
 The result is seen in the figure Convergence2D.svg.
 
@@ -52,9 +61,11 @@ The result is seen in the figure Convergence5D.svg.
 
 
 We clearly see that the error of the quasi-random method falls faster with respect
-to N than that of the pseudo-random method which falls as O(1/√N), both in 2D and
-5D. According to the Wikipedia page 'Quasi-Monte Carlo method', an upper bound on
+to N than that of the pseudo-random method which falls as O(1/√N), all cases 1D, 2D
+and 5D. According to the Wikipedia page 'Quasi-Monte Carlo method', an upper bound on
 the error estimation should fall as O(log(N)^s/N), where s is the dimension. In the
+case, it is not clear exactly which behavior the quasi-random error exhibits, but it
+seems to fall between the O(log(N)/N) (upper bound for s = 1) and O(1/N). In the
 2D case, it is not clear from the figure whether the quasi-random error falls as
 O(log(N)^2/N) or as O(log(N)/N), but we can however see that it doesn't fall slower
 than O(log(N)^2/N) and it doesn't fall as fast as just O(1/N).

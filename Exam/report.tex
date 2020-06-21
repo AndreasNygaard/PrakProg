@@ -55,7 +55,7 @@ Using 5000 sampling points, I have calculated the integral of the Himmelblau's f
 from 0 to 6 in both dimensions, which analytically is
 
 \begin{equation}
-	\int_0^6\mathrm{d}x\int_0^6\mathrm{d}y(x^2+y-11)^2+(x+y^2-7)^2 = 11\,390.4
+	\int_0^6\mathrm{d}x\int_0^6\mathrm{d}y\,(x^2+y-11)^2+(x+y^2-7)^2 = 11\,390.4
 \end{equation}
 
 In table \ref{tab:int} we see the results of a calculation with these three methods.
@@ -93,25 +93,45 @@ methods.}}
     \label{fig:sample}
 \end{figure}
 
+We will test error as a function of number of sampling points, $N$, (convergence rate) using integrals
+of three different dimensions - 1D, 2D and 5D. 
+\\
 
-We will use the Himmelblau's function to test the error as a function of $N$.
-The result of this is seen in figure \ref{fig:2D}, where we show both the estimated and
+We start with a 1D integral:
+\begin{equation}
+        \int_0^{\pi} \mathrm{d}x\, x^3\exp(-x^2) = 
+\frac{1}{2}-\frac{1}{2}\exp(-\pi^2)(1+\pi^2)\approx0.49972
+\end{equation}
+The result of this is seen in figure \ref{fig:1D}, where we show both the estimated and
 actual error of both the pseudo-random and quasi-random method. The actual error of the
 quasi-random method is measured from the estimated integral of the Lattice sequence method,
 while the estimated error is the difference between the estimated integrals of Lattice and
 Halton as mentioned previously. The figure also shows the $\mathcal{O}(1/\sqrt{N})$ behavior
-separately along with $\mathcal{O}(\log(N)^s/N)$ behaviors for $s=0,1,2$.
+separately along with $\mathcal{O}(\log(N)^s/N)$ behaviors for $s=0,1$.
+\\
+
+We will use the Himmelblau's function to test the error in 2D. We integrate from 0 to 6
+in both dimensions. The result of this is seen in figure \ref{fig:2D}, 
+where we show the same as before but now with $s=0,1,2$.
 \\
 
 We will also check the convergence of a 5D integral from 0 to 2 in alle five dimensons:
 \begin{equation}
 	\int_{[0,2]^5} \mathrm{d}V f(x,y,z,p,q) = \int_0^2 \mathrm{d}x \int_0^2 \mathrm{d}y \int_0^2 \mathrm{d}z
-\int_0^2 \mathrm{d}p \int_0^2 \mathrm{d}q x\cdot p^2 -10 z\cdot q + 5y^2 = -64
+\int_0^2 \mathrm{d}p \int_0^2 \mathrm{d}q \, x\cdot p^2 -10 z\cdot q + 5y^2 = -64
 \end{equation}
 
 The result is seen in figure \ref{fig:5D}, where we show the same as before but now with $s=0,1,2,3,4,5$.
 A zoom-in on the figure also shows the behavior of the convergence at relatively small $N$.
 \\
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\textwidth]{Convergence1D.png}
+    \caption{\textsl{Pseudo- and quasi-random convergence rates for a 1D integral. The integral is that
+of the function:} $f(x)=x^3\cdot\exp(-x^2),$ \textsl{from $x=0$ to $x=\pi$.}}
+    \label{fig:1D}
+\end{figure}
 
 \begin{figure}[t]
     \centering
@@ -133,9 +153,11 @@ of the function:} $f(x,y,z,p,q)=x\cdot p^2 -10 z\cdot q + 5y^2,$ \textsl{from 0 
 
 
 We clearly see that the error of the quasi-random method falls faster with respect
-to $N$ than that of the pseudo-random method which falls as $\mathcal{O}(1/\sqrt{N})$, both in 2D and
-5D. As mentioned before, an upper bound on
-the error estimation should fall as $\mathcal{O}(\log(N)^s/N)$, where $s$ is the dimension. In the
+to $N$ than that of the pseudo-random method which falls as $\mathcal{O}(1/\sqrt{N})$, for all cases (1D, 2D and
+5D) - mostly clear for the estimated error but also the actual to some extend. As mentioned before, an upper bound on
+the behavior of the quasi-random error estimation should be $\mathcal{O}(\log(N)^s/N)$, where $s$ is the dimension. In the
+1D case, it is not clear exactly which behavior the quasi-random error exhibits, but it seems to fall between the
+$\mathcal{O}(\log(N)/N)$ (upper bound for $s=1$) and $\mathcal{O}(1/N)$. In the
 2D case, it is not clear from the figure whether the quasi-random error falls as
 $\mathcal{O}(\log(N)^2/N)$ or as $\mathcal{O}(\log(N)/N)$, but we can however see that it doesn't fall slower
 than $\mathcal{O}(\log(N)^2/N)$ and it doesn't fall as fast as just $\mathcal{O}(1/N)$.

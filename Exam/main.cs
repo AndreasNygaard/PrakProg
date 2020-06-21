@@ -9,6 +9,9 @@ static void Main(){
 
 	WriteLine("______ Exam problem 11 ______\n");
 
+	Func<vector,double> F_1D=delegate(vector z){
+		return Pow(z[0],3)*Exp(-Pow(z[0],2));
+		};
 	Func<vector,double> F_HF=delegate(vector z){
 		return Pow(Pow(z[0],2)+z[1]-11,2)+Pow(z[0]+Pow(z[1],2)-7,2);
 		};
@@ -66,14 +69,38 @@ static void Main(){
 
 
 
-	WriteLine("We will use the Himmelblau's function to test the error as a function of N.\n");
-	int n=80;
+	WriteLine("We will use a 1D function to test the error as a function of N. We calculate \nthe integral from x=0 to x=π of the function:\nf(x) = x^3·exp(-x^2)\n\nThe exact integral is then ∫[0,π] f dx = 1/2-1/2·exp(-π^2)·(1+π^2) = 0.49972\n");
+	int n=60;
 	double true_error;
+	a = new vector(new double[]{0});
+	b = new vector(new double[]{PI});
+	exact = 0.5-0.5*Exp(-Pow(PI,2))*(1+Pow(PI,2));
+	for(int i=1;i<n+1;i++){
+		int Ni = i*i*i*16;
+		(integral, error) = mc.plainmc(F_1D,a,b,Ni);
+		true_error = Abs(integral-exact);
+		Error.WriteLine($"{Ni} {error} {true_error}");
+		}
+	Error.Write("\n\n");
+
+	for(int i=1;i<n+1;i++){
+		int Ni = i*i*i*16;
+		(integral, error) = mc.plainmc(F_1D,a,b,Ni,Quasi:true);
+		true_error = Abs(integral-exact);
+		Error.WriteLine($"{Ni} {error} {true_error}");
+		}
+	Error.Write("\n\n");
+	WriteLine("The result is seen in the figure Convergence1D.svg.");
+	Write("\n\n");
+
+
+	WriteLine("We will also use the Himmelblau's function to test the convergence.\n");
+	n=80;
 	a = new vector(new double[]{0,0});
 	b = new vector(new double[]{6,6});
 	exact = 56952.0/5.0;
 	for(int i=2;i<n+2;i++){
-		int Ni = i*i*i*11;
+		int Ni = i*i*i*5;
 		(integral, error) = mc.plainmc(F_HF,a,b,Ni);
 		true_error = Abs(integral-exact);
 		Error.WriteLine($"{Ni} {error} {true_error}");
@@ -81,7 +108,7 @@ static void Main(){
 	Error.Write("\n\n");
 
         for(int i=2;i<n+2;i++){
-                int Ni = i*i*i*11;
+                int Ni = i*i*i*5;
                 (integral, error) = mc.plainmc(F_HF,a,b,Ni,Quasi:true);
                 true_error = Abs(integral-exact);
                 Error.WriteLine($"{Ni} {error} {true_error}");
@@ -115,9 +142,11 @@ static void Main(){
 	Write("\n\n");
 
 	WriteLine("We clearly see that the error of the quasi-random method falls faster with respect");
-	WriteLine("to N than that of the pseudo-random method which falls as O(1/√N), both in 2D and");
-	WriteLine("5D. According to the Wikipedia page 'Quasi-Monte Carlo method', an upper bound on");
+	WriteLine("to N than that of the pseudo-random method which falls as O(1/√N), all cases 1D, 2D");
+	WriteLine("and 5D. According to the Wikipedia page 'Quasi-Monte Carlo method', an upper bound on");
 	WriteLine("the error estimation should fall as O(log(N)^s/N), where s is the dimension. In the");
+	WriteLine("case, it is not clear exactly which behavior the quasi-random error exhibits, but it");
+	WriteLine("seems to fall between the O(log(N)/N) (upper bound for s = 1) and O(1/N). In the");
 	WriteLine("2D case, it is not clear from the figure whether the quasi-random error falls as");
 	WriteLine("O(log(N)^2/N) or as O(log(N)/N), but we can however see that it doesn't fall slower");
 	WriteLine("than O(log(N)^2/N) and it doesn't fall as fast as just O(1/N).");
