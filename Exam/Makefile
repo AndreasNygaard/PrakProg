@@ -1,3 +1,6 @@
+# The 'make' command takes ~10 minutes because the data needs to be significant
+# in order to identify the behavior of the convergence rate
+
 all: report.pdf Convergence2D.png Convergence5D.png Sample.png output.txt
 
 report.pdf: report.tex Convergence2D.png Convergence5D.png Sample.png
