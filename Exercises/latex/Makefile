@@ -26,7 +26,7 @@ gamma-c-exe: gamma.c
 	gcc gamma.c -o $@
 
 clean:
-	$(RM) *.log *.aux *.pdf *.dvi *.png plot-exp.tex *.exe *.dll *.txt *.out
+	$(RM) *.log *.aux *.pdf *.dvi *.png plot-exp.tex *-exe *.exe *.dll *.txt *.out
 
 test:
 	echo $(SRC)
