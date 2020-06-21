@@ -4,7 +4,7 @@
 ### ________ SOFTWARE REQUIREMENTS ________ ###
 
 
-To use this directory, one must meet following software requirement:
+To use this directory, one must meet the following software requirement:
 
 - GNU make
 - Csharp mono
@@ -15,7 +15,7 @@ To use this directory, one must meet following software requirement:
 If something doesn't function properly, consider updating these softwares
 
 When using gnuplot figures in latex documents, the gnuplot terminal is set
-to pngcairo. A new update has caused som problems on OS X, but it should
+to pngcairo. A new update has caused some problems on OS X, but it should
 function properly with Ubuntu and other Linux distributions. A solution
 for OS X users is to install a prevoius version of a gnuplot dependency:
 
@@ -30,11 +30,12 @@ for OS X users is to install a prevoius version of a gnuplot dependency:
 
 ### Problems ###
 
-When browsing the "Problems" directory, each problem will have an output.txt file
-which contains all the information about the solutions. 
+When browsing the "Problems" directory, each problem will have 
+an output.txt file which contains all the information about the 
+solutions. 
 
-These output.txt will refer to figures in the same folder if these are a part 
-of the solution.
+These output.txt will refer to figures in the same folder if 
+these are a part of the solution.
 
 
 
@@ -43,8 +44,8 @@ of the solution.
 
 The "Exam" directory contains a solution of exam problem 11:
 
-		"Multidimensional pseudo-random (plain Monte Carlo) vs quasi-random 
-			(Halton and/or lattice sequence) integrators"
+	"Multidimensional pseudo-random (plain Monte Carlo) vs quasi-random 
+		(Halton and/or lattice sequence) integrators"
 
 since the last two digits of my student ID number is 78 and 
 there are 22 problems begining with exam problem 0 and ending 

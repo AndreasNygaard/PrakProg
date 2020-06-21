@@ -142,12 +142,12 @@ static void Main(){
 	Write("\n\n");
 
 	WriteLine("We clearly see that the error of the quasi-random method falls faster with respect");
-	WriteLine("to N than that of the pseudo-random method which falls as O(1/√N), all cases 1D, 2D");
-	WriteLine("and 5D. According to the Wikipedia page 'Quasi-Monte Carlo method', an upper bound on");
-	WriteLine("the error estimation should fall as O(log(N)^s/N), where s is the dimension. In the");
-	WriteLine("case, it is not clear exactly which behavior the quasi-random error exhibits, but it");
-	WriteLine("seems to fall between the O(log(N)/N) (upper bound for s = 1) and O(1/N). In the");
-	WriteLine("2D case, it is not clear from the figure whether the quasi-random error falls as");
+	WriteLine("to N than that of the pseudo-random method which falls as O(1/√N), in all cases 1D,");
+	WriteLine("2D and 5D. According to the Wikipedia page 'Quasi-Monte Carlo method', an upper bound");
+	WriteLine("on the error estimation should fall as O(log(N)^s/N), where s is the dimension. In");
+	WriteLine("the 1D case, it is not clear exactly which behavior the quasi-random error exhibits,");
+	WriteLine("but it seems to fall between the O(log(N)/N) (upper bound for s = 1) and O(1/N). In");
+	WriteLine("the 2D case, it is not clear from the figure whether the quasi-random error falls as");
 	WriteLine("O(log(N)^2/N) or as O(log(N)/N), but we can however see that it doesn't fall slower");
 	WriteLine("than O(log(N)^2/N) and it doesn't fall as fast as just O(1/N).");
 	WriteLine("When examining the 5D case, we see that the O(log(N)^5/N) behavior might hold for");

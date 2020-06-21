@@ -6,10 +6,10 @@ Himmelblau's function, ∫[0,6]dx ∫[0,6]dy (x^2+y-11)^2 + (x+y^2-7)^2
 With regular Monte Carlo (Pseudo-random)
 
 Number of points N = 5000
-The integral is estimated to 11630.9803124766
+The integral is estimated to 11793.9105904547
 Exact integral is 11390.4
-The estimated error is 184.121152926264
-The exact error is 240.580312476604
+The estimated error is 186.396258903643
+The exact error is 403.510590454696
 
 With the Lattice sequence (Quasi-random)
 
@@ -61,12 +61,12 @@ The result is seen in the figure Convergence5D.svg.
 
 
 We clearly see that the error of the quasi-random method falls faster with respect
-to N than that of the pseudo-random method which falls as O(1/√N), all cases 1D, 2D
-and 5D. According to the Wikipedia page 'Quasi-Monte Carlo method', an upper bound on
-the error estimation should fall as O(log(N)^s/N), where s is the dimension. In the
-case, it is not clear exactly which behavior the quasi-random error exhibits, but it
-seems to fall between the O(log(N)/N) (upper bound for s = 1) and O(1/N). In the
-2D case, it is not clear from the figure whether the quasi-random error falls as
+to N than that of the pseudo-random method which falls as O(1/√N), in all cases 1D,
+2D and 5D. According to the Wikipedia page 'Quasi-Monte Carlo method', an upper bound
+on the error estimation should fall as O(log(N)^s/N), where s is the dimension. In
+the 1D case, it is not clear exactly which behavior the quasi-random error exhibits,
+but it seems to fall between the O(log(N)/N) (upper bound for s = 1) and O(1/N). In
+the 2D case, it is not clear from the figure whether the quasi-random error falls as
 O(log(N)^2/N) or as O(log(N)/N), but we can however see that it doesn't fall slower
 than O(log(N)^2/N) and it doesn't fall as fast as just O(1/N).
 When examining the 5D case, we see that the O(log(N)^5/N) behavior might hold for

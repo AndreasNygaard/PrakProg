@@ -68,9 +68,10 @@ the two quasi-random sequences Lattice and Halton as an error estimate in the fo
 \begin{table}[t]
 \centering
 \begin{tabular}{c|ccc}
-                        & Pseudo-Random & Lattice      & Halton       \\ \specialrule{.1em}{.05em}{.05em} 
+                        & Pseudo-Random\footnotemark
+                                        & Lattice      & Halton       \\ \specialrule{.1em}{.05em}{.05em} 
 \textsl{Integral}       & $11\,268.07$  & $11\,296.72$ & $11\,363.40$ \\
-\textsl{Exact Error}    & $122.33$       & $93.68$      & $27.00$      \\
+\textsl{Exact Error}    & $122.33$      & $93.68$      & $27.00$      \\
 \textsl{Error Estimate} & $175.17$      & -            & -           
 \end{tabular}
 \caption{\textsl{Estimates of the integral of the Himmelblau's function using all three
@@ -78,11 +79,13 @@ sampling methods. All of these calculations have $N=5000$.}}
 \label{tab:int}
 \end{table}
 
+
 Figure \ref{fig:sample} shows the sampling points of the three methods
 when calculating the integral of the Himmelblau's function. The lattice
 is very clear in the Lattice sequence, and the Halton sequence gives a
 much more evenly distributed sampling than the pseudo-random Monte Carlo.
 \\
+\footnotetext{Changes each run, so this is an example from a previous run.}
 
 \begin{figure}[t]
     \centering
